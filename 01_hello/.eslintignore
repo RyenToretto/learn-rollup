@@ -1,0 +1,6 @@
+.eslintrc.js
+*.d.ts
+
+**/dist
+**/node_modules
+**/test/**/output
