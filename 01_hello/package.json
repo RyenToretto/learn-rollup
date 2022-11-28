@@ -10,7 +10,8 @@
   },
   "main": "dist/index.js",
   "module": "dist/index.js",
-  "types": "index.d.ts",
+  "types": "types/index.d.ts",
+  "type": "module",
   "files": [
     "dist",
     "*.d.ts"

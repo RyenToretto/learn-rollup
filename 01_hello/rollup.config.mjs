@@ -20,13 +20,9 @@ const plugins = [
     preferBuiltins: true,
   }),
   json(),
-  esbuild({
-    target: 'es5'
-  }),
+  esbuild(),
   commonjs(),
-  babel({
-    babelHelpers: 'bundled'
-  })
+  babel()
 ]
 
 export default [
