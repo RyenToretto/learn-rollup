@@ -2,6 +2,7 @@ import alias from '@rollup/plugin-alias'; // 支持 别名
 import resolve from '@rollup/plugin-node-resolve'; // 支持第三库直接的模块关联
 import json from '@rollup/plugin-json'; // 支持引入 json文件
 import commonjs from '@rollup/plugin-commonjs'; // 支持 commonJS
+import babel from '@rollup/plugin-babel';
 import esbuild from 'rollup-plugin-esbuild'; // 集成 typescript
 import dts from 'rollup-plugin-dts'; // 用于生成 .d.ts 声明文件
 
@@ -19,10 +20,13 @@ const plugins = [
     preferBuiltins: true,
   }),
   json(),
-  commonjs(),
   esbuild({
-    target: 'node14',
+    target: 'es5'
   }),
+  commonjs(),
+  babel({
+    babelHelpers: 'bundled'
+  })
 ]
 
 export default [
